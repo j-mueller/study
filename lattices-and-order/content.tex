@@ -1,0 +1,52 @@
+\section{Chapter 1 ``Ordered Sets''}
+\subsection{Exercises from the text}
+\newtheorem*{assertion-1.27.1}{Assertion 1.27.1}
+\begin{assertion-1.27.1} $\downarrow Q$ is the smallest down-set containing $Q$.
+\end{assertion-1.27.1}
+\begin{proof} Assume $Q'$ is a down-set with $Q \subseteq Q' \subset \downarrow Q$. Then $\exists z \in \downarrow Q$ s.t. $z \notin Q'$, and $\exists x \in Q$ s.t. $z \leq x$. Contradiction with assumption that $Q'$ is a down-set.
+\end{proof}
+
+\newtheorem*{assertion-1.27.2}{Assertion 1.27.2}
+\begin{assertion-1.27.2} $Q$ is a down-set if and only if $Q = \downarrow Q$.
+\end{assertion-1.27.2}
+\begin{proof}
+Definition of $\downarrow Q$ is logically equivalent to def. of down-set (?).
+\end{proof}
+
+\newtheorem*{lemma-1.30}{Lemma 1.30}
+\begin{lemma-1.30} Let $P$ be an ordered set and $x, y \in P$. Then the following are equivalent:
+\begin{enumerate}
+  \item $x \leq y$
+  \item $\downarrow x \subseteq \downarrow y$
+  \item $(\forall Q \in \mathcal{O}(P)) y \in Q \Longrightarrow x \in Q$
+\end{enumerate}
+\end{lemma-1.30}
+\begin{proof}
+\emph{(1 $\Leftrightarrow$ 2):} Assume $x \leq y$ and let $x' \in \downarrow x$. Then $x' \leq x$, and by transitivity of $\leq$, $x' \leq y$. Then $x' \in \downarrow y$.
+
+\emph{(1 $\Leftrightarrow$ 3):} Assume $x \leq y$ and let $Q \in \mathcal{O}(P)$ s.t. $y \in Q$. Since $\downarrow y$ is the smallest down-set containing $y$, $\downarrow y \subseteq Q$. $x \in \downarrow x$, and by the above $\downarrow x \subseteq \downarrow y \subseteq Q$, so $x \in Q$. 
+\end{proof}
+\newtheorem*{assertion-1.31}{Assertion 1.31}
+\begin{assertion-1.31} $Q$ is a down-set of $P$ if and only if $P \setminus Q$ is an up-set of $P$
+\end{assertion-1.31}
+\begin{proof} 
+\emph{($\Rightarrow$)} Let $Q$ down-set of $P$ and let $Q' = P \setminus Q$. Let $x \in Q'$, $y \in P$ and $x \leq y$. Either $y \in Q$ or $y \in Q'$. Assume $y \in Q$. Then, by Def. of down-set, $x \in Q$, which contradicts the assumption that $x \in Q'$. So $y \in Q'$ and $Q'$ is a down-set.
+\emph{($\Leftarrow$)} Analogous 
+\end{proof}
+
+\newtheorem*{assertion-1.36-1}{Assertion 1.36 (1)}
+\begin{assertion-1.36-1} Let $\varphi: P \rightarrow Q$ and $\psi: Q \rightarrow R$ be order-preserving maps. Then the composite map $\psi \circ \varphi$, given by $(\psi \circ \varphi)(x) = \psi(\varphi(x))$ for $x \in P$, is order-preserving. More generally the composite of a finite number of order-preserving maps is order-preserving.  
+\end{assertion-1.36-1}
+\begin{proof} Let $x, y \in P$ s.t. $x \leq y$. 
+\begin{align*}
+  x \leq y & \Rightarrow \varphi(x) \leq \varphi(y) & \{ \varphi \mbox{ is order-preserving } \}\\
+           & \Rightarrow \psi(\varphi(x)) \leq \psi(\varphi(y)) & \{ \psi \mbox{ is order-preserving } \}
+\end{align*}
+\end{proof}
+\newtheorem*{assertion-1.36-2}{Assertion 1.36 (2)}
+\begin{assertion-1.36-2} Let $\psi: P \hookrightarrow Q$ and let $\psi(P)$ (defined to be $\{ \psi(x) \mid x \in P \}$) be the image of $\psi$. Then $\psi(P) \cong P$. This justifies the use of the term embedding.
+\end{assertion-1.36-2}
+\begin{proof} Let $x, y \in P$ s.t. $x \leq y$.
+\begin{align*} x \leq y & \Leftrightarrow \psi(x) \leq \psi(y)
+\end{align*}
+\end{proof}
